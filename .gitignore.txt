@@ -1,0 +1,13 @@
+# Visual Studio / .NET Build outputs
+bin/
+obj/
+.vs/
+*.user
+*.userosscache
+
+# App settings containing connection strings (nếu có thông tin nhạy cảm)
+appsettings.Development.json
+
+# OS temp files
+.DS_Store
+Thumbs.db

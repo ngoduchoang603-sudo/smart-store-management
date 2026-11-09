@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SmartStore.Web.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h2 class="mt-4 mb-3">🛒 Quản lý Sản phẩm</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">+ Thêm sản phẩm mới</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã vạch</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Giá bán</th>
+            <th>Số lượng</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><code>@item.Barcode</code></td>
+                <td><strong>@item.ProductName</strong></td>
+                <td>@item.Category?.CategoryName</td>
+                <td>@string.Format("{0:N0} VNĐ", item.Price)</td>
+                <td>@item.StockQuantity</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-sm btn-warning">Sửa</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
