@@ -1,0 +1,4 @@
+Thay đổi chuỗi DefaultConnection phù hợp với Server SQL trên máy:
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=SmartStoreDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}
